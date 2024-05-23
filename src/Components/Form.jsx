@@ -15,7 +15,6 @@ const Form = () => {
     event.preventDefault();
     if (cliente.nombre.trim().length >= 3 && cliente.apellido.length >= 6 && cliente.colorFavorito.length > 2) {
       setMostrarInfo(true);
-      setError(false);
     } else {
       setError(true);
     }
@@ -42,7 +41,7 @@ const Form = () => {
         <button type="submit">Enviar</button>
       </form>
       {mostrarInfo && <Card cliente={cliente} />}
-      {error && <div>"Por favor chequea que la información sea correcta"</div>}
+      {error && <h2>"Por favor chequea que la información sea correcta"</h2>}
     </div>
   );
 };
